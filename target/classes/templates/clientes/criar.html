@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Novo Cliente</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container my-4">
+    <h2 class="text-center mb-4">Novo Cliente</h2>
+    <form method="post" th:action="@{/clientes/criar}" th:object="${cliente}">
+        <div class="mb-3">
+            <label>Nome</label>
+            <input class="form-control" type="text" th:field="*{nome}" required>
+        </div>
+        <div class="mb-3">
+            <label>Email</label>
+            <input class="form-control" type="email" th:field="*{email}" required>
+        </div>
+        <div class="mb-3">
+            <label>Telefone</label>
+            <input class="form-control" type="text" th:field="*{telefone}">
+        </div>
+        <div class="mb-3">
+            <label>Endereço</label>
+            <input class="form-control" type="text" th:field="*{endereco}">
+        </div>
+        <div class="mb-3">
+            <label>Status</label>
+            <select class="form-select" th:field="*{status}">
+                <option value="New">New</option>
+                <option value="Permanent">Permanent</option>
+                <option value="Lead">Lead</option>
+                <option value="Occasional">Occasional</option>
+                <option value="Inactive">Inactive</option>
+            </select>
+        </div>
+        <div class="text-center">
+            <button class="btn btn-success" type="submit">Salvar</button>
+            <a class="btn btn-secondary" href="/clientes">Cancelar</a>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
