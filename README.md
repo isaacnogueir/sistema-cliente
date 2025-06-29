@@ -1,4 +1,3 @@
-# sistema-cliente
 # Gerenciamento de Clientes
 
 Projeto básico para gerenciamento de clientes desenvolvido com Java 17 e Spring Boot, usando MySQL como banco de dados.
